@@ -7,11 +7,6 @@ graph TD;
     E <--> F[CORS];
     F <--> G[Custom Middleware];
     
-    B --> C;
-    C --> D;
-    D --> E;
-    E --> F;
-    F --> G;
     
     C --> B;
     D --> C;
