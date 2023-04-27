@@ -1,4 +1,5 @@
-```mermaidgraph TD;
+```mermaid
+graph TD;
     A[Exception Handling] <-->|two-way| B[HTTPS Redirection];
     B <--> C[Static Files];
     C <--> D[Routing];
