@@ -1,6 +1,6 @@
 ```mermaid
 graph TD;
-    A[Exception Handling] <-->|response| B[HTTPS Redirection];
+    A[Exception Handling] <-->|| B[HTTPS Redirection];
     B <--> C[Static Files];
     C <--> D[Routing];
     D <--> E[Authentication];
