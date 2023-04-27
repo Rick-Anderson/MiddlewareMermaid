@@ -1,5 +1,4 @@
 ```mermaid
-graph TD;
 graph LR;
     A[Exception Handling] --> B[HTTPS Redirection]
     B --> C[Static Files]
