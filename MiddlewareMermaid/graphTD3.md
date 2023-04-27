@@ -8,6 +8,8 @@ graph TD;
     F <--> G[Custom Middleware];
     
     
+    A --> B;
+    B --> A;
     C --> B;
     D --> C;
     E --> D;
