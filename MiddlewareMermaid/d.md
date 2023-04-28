@@ -11,9 +11,9 @@ graph TD;
     StaticFiles--->Routing
     Routing--->CORS
     CORS--->Authentication
-    Authentication--->Custom1
-    Custom1--->Endpoint
-    Endpoint--->Authentication
+    Authentication--->Endpoint
+    Endpoint--->Custom1
+    Custom1--->Authentication
     Authentication--->CORS
     CORS--->Routing
     Routing--->StaticFiles
