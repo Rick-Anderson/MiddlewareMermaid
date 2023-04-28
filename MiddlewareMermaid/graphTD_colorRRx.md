@@ -6,12 +6,12 @@ graph TD;
     end
     Request--->ExceptionHandler
     ExceptionHandler--->HSTS
-    HSTS--->HttpsRedirection
-    HttpsRedirection--->StaticFiles
-    StaticFiles--->Routing
+    HSTS--->HttpsRedirection1
+    HttpsRedirection1--->Routing
     Routing--->Authentication
     Authentication--->Routing
-    Routing--->HSTS
+    Routing--->HttpsRedirection2
+    HttpsRedirection2--->HSTS
     HSTS--->ExceptionHandler
     ExceptionHandler--->Response
 
