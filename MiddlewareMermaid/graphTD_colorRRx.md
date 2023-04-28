@@ -14,4 +14,11 @@ graph TD;
     Routing--->HSTS
     HSTS--->ExceptionHandler
     ExceptionHandler--->Response
+
+    HSTS--xRouting
+    Routing--xHSTS
+    Authentication--xAuthorization
+    Authorization--xCustomMiddleware1
+    CustomMiddleware1--xEndpoint
+
 ```
