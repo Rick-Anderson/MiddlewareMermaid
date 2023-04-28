@@ -24,5 +24,4 @@ graph TD;
     HSTS--->ExceptionHandler
     ExceptionHandler--->Response
 
-
 ```
