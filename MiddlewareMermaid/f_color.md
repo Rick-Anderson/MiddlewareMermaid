@@ -11,27 +11,33 @@ graph TD;
     StaticFiles--->Routing
     Routing--->CORS
     CORS--->Authentication
-    style CORS stroke: blue;
-    style Authentication stroke: blue;
     Authentication--->Authorization
-    style Authorization stroke: red;
-    Authorization-->Authentication
-    style CORS2 stroke: red;
-    CORS2--->Routing
+    Authorization--->Custom1
+    Custom1--->Endpoint
+    
+    Endpoint--->Custom1
+    Custom1--->Authorization
+    Authorization--->Authentication
+    Authentication--->CORS
+    CORS--->Routing
     Routing--->StaticFiles
     StaticFiles--->HttpsRedirection
     HttpsRedirection--->HSTS
     HSTS--->ExceptionHandler
     ExceptionHandler--->Response
+    
+    %% Link Styles
     linkStyle 0 stroke-width:2px,fill:none,stroke:blue;
     linkStyle 1 stroke-width:2px,fill:none,stroke:blue;
     linkStyle 2 stroke-width:2px,fill:none,stroke:blue;
     linkStyle 3 stroke-width:2px,fill:none,stroke:blue;
-    linkStyle 4 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
-    linkStyle 5 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
-    linkStyle 6 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
-    linkStyle 7 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
-
+    linkStyle 4 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 5 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 6 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 7 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 8 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 9 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 10 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
 
 ```
 
