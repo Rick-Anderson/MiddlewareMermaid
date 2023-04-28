@@ -1,18 +1,16 @@
 ```mermaid
 graph TD;
-    Request-->|Request|ExceptionHandler
-    ExceptionHandler-->HSTS
-    HSTS-->Routing
-    Routing-->Authentication
-    Authentication--->Routing2
-    Routing2--->HSTS2
-    HSTS2--->ExceptionHandler2
-    ExceptionHandler2--->|Response|Response
-    subgraph Request
-        Request[Request]
+    subgraph Request-Response
+        Request((Request))
+        Response((Response))
     end
-    subgraph Response
-        Response[Response]
-    end
+    Request--->ExceptionHandler
+    ExceptionHandler--->HSTS
+    HSTS--->Routing
+    Routing--->Authentication
+    Authentication--->Routing
+    Routing--->HSTS
+    HSTS--->ExceptionHandler
+    ExceptionHandler--->Response
 
 ```
