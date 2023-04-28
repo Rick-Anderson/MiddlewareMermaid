@@ -11,10 +11,15 @@ graph TD;
     StaticFiles--->Routing
     Routing--->CORS
     CORS--->Authentication
+    Authentication--->CORS
+    CORS--->Authorization
+    Authorization--->CustomMiddleware1
+    CustomMiddleware1--->Endpoint
+    Endpoint--->CORS
     Authentication--->Routing
-    Routing--->StaticFiles
-    StaticFiles--->HttpsRedirection
+    Routing--->HttpsRedirection
     HttpsRedirection--->HSTS
     HSTS--->ExceptionHandler
     ExceptionHandler--->Response
+
 ```
