@@ -1,3 +1,4 @@
+
 ```mermaid
 graph TD;
     subgraph Request-Response
@@ -11,11 +12,12 @@ graph TD;
     StaticFiles--->Routing
     Routing--->CORS
     CORS--->Authentication
-    Authentication--->Authorization
-    Authorization-->Custon1
-    Custon1-->Endpoint
-    
-    Endpoint-->Authentication
+    Authentication--->Custom1
+    Custom1--->Endpoint
+
+
+    Endpoint--->Custom1 
+    Custom1-->Authentication
     Authentication--->CORS
     CORS--->Routing
     Routing--->StaticFiles
@@ -23,6 +25,5 @@ graph TD;
     HttpsRedirection--->HSTS
     HSTS--->ExceptionHandler
     ExceptionHandler--->Response
-
 
 ```
