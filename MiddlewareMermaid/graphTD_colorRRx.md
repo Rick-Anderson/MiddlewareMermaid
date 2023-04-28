@@ -1,32 +1,36 @@
 ```mermaid
 graph TD;
-    subgraph Request-Response
+    subgraph Client
+        c(Client)
+    end
+    subgraph ASP.NET Core App
         Request((Request))
         Response((Response))
+        Request--->ExceptionHandler
+        ExceptionHandler--->HSTS
+        HSTS--->HttpsRedirection
+        HttpsRedirection--->StaticFiles
+        StaticFiles--->Routing
+        Routing--->Cors
+        Cors--->Authentication
+        Authentication--->Authorization
+        Authorization--->CustomMiddleware1
+        CustomMiddleware1--->Endpoint
+        Routing--->ExceptionHandler
+        ExceptionHandler--->Response
     end
-    Request--->ExceptionHandler
-    ExceptionHandler--->HttpsRedirection
-    HttpsRedirection--->StaticFiles
-    ExceptionHandler--->HSTS
-    HSTS--->Routing
-    Routing--->Authentication
-    Authentication--->Authorization
-    Authorization--->CustomMiddleware1
-    CustomMiddleware1--->endpoint
-    Routing--->HSTS
-    HSTS--->ExceptionHandler
-    ExceptionHandler--->Response
-    Authentication--->CORS
-    CORS--->Authorization
 
     linkStyle 0 stroke-width:2px,fill:none,stroke:red;
     linkStyle 1 stroke-width:2px,fill:none,stroke:red;
     linkStyle 2 stroke-width:2px,fill:none,stroke:blue;
-    linkStyle 3 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 3 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
     linkStyle 4 stroke-width:2px,fill:none,stroke:blue;
-    linkStyle 5 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:blue;
-    linkStyle 6 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
-    linkStyle 7 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
-    linkStyle 8 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
+    linkStyle 5 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
+    linkStyle 6 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 7 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 8 stroke-width:2px,fill:none,stroke:blue;
+    linkStyle 9 stroke-width:2px,fill:none,stroke:red;
+    linkStyle 10 stroke-dasharray: 5 5, stroke-width:2px,fill:none,stroke:red;
+
 
 ```
