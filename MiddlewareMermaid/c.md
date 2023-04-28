@@ -9,15 +9,17 @@ graph TD;
     HSTS--->HttpsRedirection
     HttpsRedirection--->StaticFiles
     StaticFiles--->Routing
-    Routing--->Authentication
-    Authentication--->Routing
     Routing--->CORS
-    CORS--->Authorization
-    Authorization--->Custom1
-    Custom1--->endpoint
-    endpoint--->Authentication
-    Authentication--->HttpsRedirection
+    CORS--->Authentication
+    
+    
+    Authentication--->CORS
+    CORS--->Routing
+    Routing--->StaticFiles
+    StaticFiles--->HttpsRedirection
     HttpsRedirection--->HSTS
     HSTS--->ExceptionHandler
     ExceptionHandler--->Response
+
+
 ```
